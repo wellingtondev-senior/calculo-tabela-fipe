@@ -45,7 +45,7 @@ function Home() {
   return (
     <main className="w-full min-h-screen bg-[#0F0019]">
       <Layout>
-        <article className='m-auto p-10 bg-[#321646] rounded-lg shadow-lg shadow-[#47376d] w-[60%] max-md:w-[90%] '>
+        <article className='m-auto max-md:p-4 p-10 bg-[#321646] rounded-lg shadow-lg shadow-[#47376d] w-[60%] max-md:w-[90%] '>
           <form className='w-full flex items-center justify-center flex-col gap-4'>
             <Select placeholder="Tipo de Veiculo" data={veiculos} disabled={false} handle={setIsTipo} value={isTipo} />
             <Select placeholder="Marcas" data={findMarcas.data?.length == 0 || findMarcas.data == undefined ? [] : findMarcas?.data} disabled={false} handle={setIsMarcas} value={isMarcas} />
@@ -55,12 +55,12 @@ function Home() {
           <div className='rounded-lg bg-[#1f0e2c] mt-10'>
             {
               findValor.isLoading ?
-                <div className='flex items-center justify-center '>
+                <div className='flex items-center justify-center p-10 max-md:p-4 '>
                   <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
                 </div> :
 
                 findValor.isSuccess ?
-                  <div className='p-10'>
+                  <div className='p-10 max-md:p-4'>
                     <div className='text-gray-100 space-x-4'>
                       <span className='font-bold text-[13px]'>Tipo de  Veiculo:</span>
                       <span >{findValor.data?.TipoVeiculo}</span>
@@ -100,10 +100,10 @@ function Home() {
                   </div>
                   : findValor.isError ?
 
-                    <div className='flex items-center justify-center p-10 text-gray-100 text-[13px] font-bold'>
+                    <div className='flex items-center justify-center p-10 max-md:p-4 text-gray-100 text-[13px] font-bold'>
                       <span>Gerou um Error</span>
                     </div> :
-                    <div className='flex items-center justify-center p-10 text-gray-100 text-[13px] font-bold'>
+                    <div className='flex items-center justify-center p-10 max-md:p-4 text-gray-100 text-[13px] font-bold'>
                       <span>Selecione Todos os campos</span>
                     </div>
             }
